@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="is-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog del Equipo Aprobado</title>
+</head>
+<body>
+    <div class="fondo-animado">
+        <!-- Navbar -->
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <b>Blog del Equipo Aprobado</b>
+                    </a>
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a href="index.html" class="navbar-item">Inicio</a>
+                        <a href="#about-section" class="navbar-item">Sobre Nosotros</a>
+                        <a href="#contact-section" class="navbar-item">Contacto</a>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <button id="theme-toggle" class="button is-light">Cambiar a Modo Oscuro</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero is-primary is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">Bienvenido a nuestro Blog</h1>
+                    <h2 class="subtitle">Reflexiones, tutoriales y más.</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posts Section -->
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-thirds">
+                        <!-- Blog Posts -->
+                        <div id="posts" class="content">
+                            <!-- Posts will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Post Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="titulo title animated-title white-title">Agregar Nuevo Post</h2>
+                <div class="box">
+                    <div class="field">
+                        <label class="label">Título</label>
+                        <div class="control">
+                            <input id="post-title" class="input" type="text" placeholder="Título del post">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Contenido</label>
+                        <div class="control">
+                            <textarea id="post-content" class="textarea" placeholder="Contenido del post"></textarea>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button id="add-post" class="button is-primary">Agregar Post</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about-section">
+            <div class="container">
+                <h2 class="titulo title animated-title white-title">Sobre Nosotros</h2>
+                <div id="about-carousel" class="carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-item box">
+                            <p class="title is-5">Sergio André Chiquinta Veramendi</p>
+                            <p>Hola soy Ing. Sistemas, un apasionado del desarrollo web y la tecnología.</p>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Jeremy Kevin Marcelo Valladolid</p>
+                            <p>Soy Ing.Sistemas UX/UI con experiencia en crear interfaces amigables y centradas en el usuario.</p>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Javier Moises Rojas Espinoza</p>
+                            <p>Desarrollador backend especializado en soluciones escalables y optimización de bases de datos.</p>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Franco Manuel Falcon Carrera</p>
+                            <p>Ingeniero de sistemas en busqueda de nuevos conocimientos.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-prev">‹</button>
+                    <button class="carousel-next">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact-section">
+            <div class="container">
+                <h2 class="titulo title animated-title white-title">Contacto</h2>
+                <div id="contact-carousel" class="carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-item box">
+                            <p class="title is-5">Contacto 1</p>
+                            <p>Correo: sergiochiquinta@gmail.com</p>
+                            <p>Teléfono: +51 967548512</p>
+                            <button class="button is-primary contact-button" data-contact-id="1">Contactar</button>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Contacto 2</p>
+                            <p>Correo: jeremymarcelo92@gmail.com</p>
+                            <p>Teléfono: +51 967548512</p>
+                            <button class="button is-primary contact-button" data-contact-id="2">Contactar</button>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Contacto 3</p>
+                            <p>Correo: moisesree2014@gmail.com</p>
+                            <p>Teléfono: +51 967548512</p>
+                            <button class="button is-primary contact-button" data-contact-id="3">Contactar</button>
+                        </div>
+                        <div class="carousel-item box">
+                            <p class="title is-5">Contacto 4</p>
+                            <p>Correo: franco152@gmail.com</p>
+                            <p>Teléfono: +51 967548512</p>
+                            <button class="button is-primary contact-button" data-contact-id="4">Contactar</button>
+                        </div>
+                    </div>
+                    <button class="carousel-prev">‹</button>
+                    <button class="carousel-next">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Blog del Equipo Aprobado</strong>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="data.js"></script>
+</body>
+</html>

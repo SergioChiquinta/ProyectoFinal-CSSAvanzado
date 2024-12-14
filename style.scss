@@ -1,0 +1,350 @@
+// Variables
+$primary-color: #00d1b2;
+$secondary-color: #008672;
+$dark-background: #121212;
+$light-background: #ffffff;
+$dark-text: #ffffff;
+$light-text: #121212;
+$box-background-dark: #1f1f1f;
+$box-background-light: #ffffff;
+$hero-background-dark: #272727;
+$modal-background-dark: rgba(0, 0, 0, 0.75);
+$input-background-dark: #2c2c2c;
+$border-color-dark: #000000;
+$border-color-light: #dddddd; // Borde para modo claro
+$placeholder-color-dark: #9a9a9a;
+$link-color-dark: #4a90e2;
+$modal-head-foot-background-dark: #333333;
+
+// Mixin for Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//Fondo animado
+body {
+  margin-top: 0rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+}
+
+body, .fondo-animado {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  animation: bg-scrolling-reverse 0.92s infinite linear;
+}
+
+@keyframes bg-scrolling-reverse {
+  100% {
+      background-position: 50px 50px;
+  }
+}
+
+html[data-theme="is-dark"] .fondo-animado {
+  filter: invert(1); /* Invertir solo la imagen de fondo */
+}
+
+html[data-theme="is-dark"] body {
+  color: #ffffff; /* Texto claro en modo oscuro */
+}
+
+// Animations
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+
+// Global Styles
+html[data-theme="is-dark"] {
+  background-color: $dark-background;
+  color: $dark-text;
+}
+
+html[data-theme="is-light"] {
+  background-color: $light-background;
+  color: $light-text;
+}
+
+// Estilos para las tarjetas
+.card.is-dark {
+  background-color: $box-background-dark; // Fondo oscuro
+  color: $dark-text; // Texto claro
+  border: 2px solid $border-color-dark; // Borde en modo oscuro
+}
+
+.card.is-light {
+  background-color: $box-background-light; // Fondo claro
+  color: $light-text; // Texto oscuro
+  border: 2px solid $border-color-light; // Borde en modo claro
+}
+
+// Estilos para las cajas
+.box {
+  background-color: $box-background-light; // Fondo blanco en modo claro
+  color: $light-text; // Texto oscuro en modo claro
+  border: 2px solid $border-color-light; // Borde en modo claro
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html[data-theme="is-dark"] .box {
+  background-color: $box-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+  border: 2px solid $border-color-dark; // Borde en modo oscuro
+}
+
+// Modal
+.modal-card {
+  background-color: $box-background-light; // Fondo blanco en modo claro
+  color: $light-text; // Texto oscuro en modo claro
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid $border-color-light; // Borde en modo claro
+}
+
+html[data-theme="is-dark"] .modal-card {
+  background-color: $box-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+  border: 2px solid $border-color-dark; // Borde en modo oscuro
+}
+
+// Estilos para el encabezado del modal
+.modal-card-head {
+  background-color: $box-background-light; // Fondo blanco en modo claro
+  color: $light-text; // Texto oscuro en modo claro
+}
+
+html[data-theme="is-dark"] .modal-card-head {
+  background-color: $modal-head-foot-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+}
+
+.modal-card-title {
+  color: $light-text; // Texto oscuro en modo claro
+}
+
+html[data-theme="is-dark"] .modal-card-title {
+  color: $dark-text; // Texto claro en modo oscuro
+}
+
+.title {
+  color: $light-text; // Texto oscuro en modo claro
+}
+
+html[data-theme="is-dark"] .title {
+  color: $dark-text; // Texto claro en modo oscuro
+}
+
+// Estilos para el cuerpo del modal
+.modal-card-body {
+  background-color: $box-background-light; // Fondo blanco en modo claro
+  color: $light-text; // Texto oscuro en modo claro
+}
+
+html[data-theme="is-dark"] .modal-card-body {
+  background-color: $box-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+}
+
+// Estilos para el pie del modal
+.modal-card-foot {
+  background-color: $box-background-light; // Fondo blanco en modo claro
+  color: $light-text; // Texto oscuro en modo claro
+}
+
+html[data-theme="is-dark"] .modal-card-foot {
+  background-color: $modal-head-foot-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+}
+
+// Botón
+
+.button {
+  background-color: $primary-color; // Fondo del botón en modo claro
+  color: $light-text; // Texto del botón en modo claro
+  border: 2px solid $border-color-light; // Borde del botón en modo claro
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+html[data-theme="is-dark"] .button {
+  background-color: $box-background-dark; // Fondo del botón en modo oscuro
+  color: $dark-text; // Texto del botón en modo oscuro
+  border: 2px solid $border-color-dark; // Borde del botón en modo oscuro
+}
+
+// Estilos para los inputs y textareas
+input, textarea {
+  background-color: $light-background; // Fondo blanco en modo claro
+  color: $dark-text; // Texto oscuro en modo claro
+  border: 2px solid $border-color-light; // Borde claro en modo claro
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+html[data-theme="is-dark"] input, html[data-theme="is-dark"] textarea {
+  background-color: $input-background-dark; // Fondo oscuro en modo oscuro
+  color: $dark-text; // Texto claro en modo oscuro
+  border: 2px solid $border-color-dark; // Borde oscuro en modo oscuro
+}
+
+// Placeholder
+input::placeholder, textarea::placeholder {
+  color: $placeholder-color-dark; // Color del placeholder
+}
+
+html[data-theme="is-dark"] input::placeholder, html[data-theme="is-dark"] textarea::placeholder {
+  color: lighten($placeholder-color-dark, 20%); // Color del placeholder en modo oscuro
+}
+
+// Links
+html[data-theme="is-dark"] a {
+  color: $dark-text;
+}
+
+html[data-theme="is-dark"] .modal-card-body a {
+  text-decoration: none;
+}
+
+html[data-theme="is-dark"] .modal-card-body a:hover {
+  text-decoration: underline;
+}
+
+// Hero Section
+.hero.is-primary {
+  background-color: $primary-color;
+  color: $light-text;
+}
+
+html[data-theme="is-dark"] .hero.is-primary {
+  background-color: $hero-background-dark;
+  color: $dark-text;
+}
+
+// Title, Subtitle, Label
+html[data-theme="is-light"] .title,
+html[data-theme="is-light"] .subtitle,
+html[data-theme="is-light"] .label {
+  color: $light-text;
+}
+
+html[data-theme="is-dark"] .title,
+html[data-theme="is-dark"] .subtitle,
+html[data-theme="is-dark"] .label {
+  color: $dark-text;
+}
+
+// Close Button in Modals
+html[data-theme="is-dark"] .delete {
+  background-color: $box-background-dark;
+  color: $dark-text;
+}
+
+// Additional Modal Styles
+html[data-theme="is-dark"] .modal-card-body {
+  color: $dark-text;
+}
+
+html[data-theme="is-dark"] .modal-card-body p {
+  color: lighten($dark-text, 20%);
+}
+
+// Flex and Grid Layouts
+.hero-body {
+  @include flex-center;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  margin: 0.5rem;
+  min-width: 200px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card, .box {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.button:hover {
+  animation: pulse 0.6s infinite;
+  background-color: $secondary-color; /* Color de fondo al pasar el ratón */
+}
+
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: left 0.5s ease;
+}
+
+html[data-theme="is-light"] .titulo {
+  color: $light-text;
+}
+
+html[data-theme="is-dark"] .titulo {
+  color: $light-text;
+}
+
+.carousel-prev, .carousel-next {
+  font-size: 2em; /* Aumenta el tamaño de fuente */
+  padding: 0.5em 1em; /* Aumenta el padding */
+  color: white; /* Color del texto */
+  background-color: $primary-color; /* Color de fondo */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: $secondary-color; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilos para el modo oscuro */
+html[data-theme='is-dark'] .carousel-prev, html[data-theme='is-dark'] .carousel-next {
+  background-color: #444; /* Color de fondo en modo oscuro */
+  color: white; /* Color del texto en modo oscuro */
+}
+
+html[data-theme='is-dark'] .carousel-prev:hover, html[data-theme='is-dark'] .carousel-next:hover {
+  background-color: #222; /* Color de fondo al pasar el ratón en modo oscuro */
+}
