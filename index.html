@@ -8,6 +8,75 @@
     <link rel="stylesheet" href="style.css">
     <title>Blog del Equipo Aprobado</title>
 </head>
+    <script>// Script para manejar la apertura y cierre del modal
+    document.addEventListener("DOMContentLoaded", () => {
+        const contactButtons = document.querySelectorAll(".contact-button");
+        const modal = document.getElementById("contact-modal");
+        const modalCloseButton = document.querySelector(".modal-close");
+        const modalBackground = document.querySelector(".modal-background");
+    
+        // Datos para los contactos (puedes personalizar o cargar dinámicamente)
+        const contactDetails = {
+            1: {
+                name: "Sergio André Chiquinta Veramendi",
+                email: "sergiochiquinta@gmail.com",
+                phone: "967548512",
+                description: "Ingeniero en Sistemas, apasionado por el desarrollo web y la tecnología."
+            },
+            2: {
+                name: "Jeremy Kevin Marcelo Valladolid",
+                email: "jeremymarcelo92@gmail.com",
+                phone: "963333412",
+                description: "Ingeniero en Sistemas UX/UI, con experiencia en crear interfaces amigables."
+            },
+            3: {
+                name: "Javier Moises Rojas Espinoza",
+                email: "moisesree2014@gmail.com",
+                phone: "943202702",
+                description: "Desarrollador Backend especializado en soluciones escalables."
+            },
+            4: {
+                name: "Lucía Ramírez",
+                email: "serchivera76@gmail.com",
+                phone: "967548512",
+                description: "Ingeniera de software apasionada por la inteligencia artificial."
+            }
+        };
+    
+        // Abrir el modal al hacer clic en el botón "Contactar"
+        contactButtons.forEach(button => {
+            button.addEventListener("click", (e) => {
+                const contactId = e.target.getAttribute("data-contact-id");
+                const contact = contactDetails[contactId];
+    
+                // Establecer contenido del modal
+                document.getElementById("modal-name").innerText = contact.name;
+                document.getElementById("modal-email").innerText = Correo: ${contact.email};
+                document.getElementById("modal-phone").innerText = Teléfono: ${contact.phone};
+                document.getElementById("modal-description").innerText = contact.description;
+    
+                // Mostrar el modal
+                modal.classList.add("is-active");
+            });
+        });
+    
+        // Cerrar el modal al hacer clic en el botón de cierre
+        modalCloseButton.addEventListener("click", () => {
+            modal.classList.remove("is-active");
+        });
+    
+        // Evitar que el modal se cierre cuando se hace clic fuera del contenido del modal
+        modalBackground.addEventListener("click", (e) => {
+            // Prevenir que el clic fuera del modal cierre el modal
+            e.stopPropagation();
+        });
+    
+        // Cerrar el modal al hacer clic en el botón de cerrar (dentro del modal)
+        modalCloseButton.addEventListener("click", () => {
+            modal.classList.remove("is-active");
+        });
+    });
+    </script>
 <body>
     <div class="fondo-animado">
         <!-- Navbar -->
